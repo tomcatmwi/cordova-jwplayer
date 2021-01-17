@@ -1,0 +1,13 @@
+com.longtailvideo.jwplayer
+com.longtailvideo.jwplayer.configuration
+com.longtailvideo.jwplayer.events
+com.longtailvideo.jwplayer.events.listeners
+com.longtailvideo.jwplayer.fullscreen
+com.longtailvideo.jwplayer.media.adaptive
+com.longtailvideo.jwplayer.media.ads
+com.longtailvideo.jwplayer.media.ads.dai
+com.longtailvideo.jwplayer.media.audio
+com.longtailvideo.jwplayer.media.captions
+com.longtailvideo.jwplayer.media.drm
+com.longtailvideo.jwplayer.media.meta
+com.longtailvideo.jwplayer.media.playlists

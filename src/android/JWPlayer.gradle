@@ -1,0 +1,47 @@
+repositories{
+    jcenter()
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'https://mvn.jwplayer.com/content/repositories/releases/'
+        }
+    }
+
+    subprojects {
+        project.configurations.all {
+            resolutionStrategy.eachDependency { details ->
+                if (details.requested.group == 'com.google.android.gms'
+                        && !details.requested.name.contains('multidex') ) {
+                    details.useVersion "10"
+                }
+            }
+        }
+    }    
+}
+
+dependencies {
+    implementation 'com.android.support:multidex:+'
+    implementation 'com.google.android.gms:play-services:+'
+
+    compile(name:'jwplayer-core-3.19.1', ext:'aar')
+    compile(name:'jwplayer-common-3.19.1', ext:'aar')
+    compile(name:'jwplayer-chromecast-3.19.1', ext:'aar')
+    compile(name:'jwplayer-ima-3.19.1', ext:'aar')
+    compile(name:'jwplayer-freewheel-3.19.1', ext:'aar')
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+	androidTestImplementation 'junit:junit:4.12'
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+

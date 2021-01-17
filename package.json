@@ -1,0 +1,34 @@
+{
+  "name": "cordova-jwplayer",
+  "version": "0.0.1",
+  "description": "Cordova plugin to embed JWPlayer native API in Cordova/Ionic projects",
+  "cordova": {
+    "id": "cordova-jwplayer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomcatmwi/cordova-jwplayer.git"
+  },
+  "keywords": [
+    "JWPlayer",
+    "Video",
+    "Player",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Tamas Polgar <tamas.polgar.pixeldog@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomcatmwi/cordova-jwplayer/issues"
+  },
+  "homepage": "https://github.com/tomcatmwi/cordova-jwplayer/"
+}

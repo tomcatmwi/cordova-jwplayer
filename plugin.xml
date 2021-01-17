@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-jwplayer" version="0.0.1">
+   
+   <name>cordova-jwplayer</name>
+
+   <js-module name="JWPlayer" src="www/JWPlayer.js">
+      <clobbers target="window.plugins.JWPlayer" />
+   </js-module>
+
+<platform name="android">
+
+    <source-file src="src/android/JWPlayer.java" target-dir="src/cordova-jwplayer/JWPlayer" />
+
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="JWPlayer">
+        <param name="android-package" value="jwplayer.JWPlayer" />
+        </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+
+    <meta-data
+        android:name="JW_LICENSE_KEY"
+        android:value="FkCQOsDhe5Udtxv2xox+j5pmPWgnFw4ScR2t64Gp6wLI/8qS" />
+
+    <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="com.jwplayer.opensourcedemo.CastOptionsProvider" />
+
+    <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />            
+
+    </config-file> 
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <activity 
+            android:label="JWPlayer Activity" 
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name="com.pixeldog.jwplayer.JWPlayerActivity" />
+    </config-file>
+
+    <source-file src="src/android/JWPlayerActivity.java" target-dir="src/com/example/sample/plugin" />
+    <source-file src="src/android/res/layout/main.xml" target-dir="res/layout"/>
+
+    <framework src="src/android/JWPlayer.gradle" custom="true" type="gradleReference" />
+
+    <lib-file src="src/android/sdk/jwplayer-core-3.19.1.aar" target="libs/jwplayer-core-3.19.1.aar" />      
+    <lib-file src="src/android/sdk/jwplayer-common-3.19.1.aar" target="libs/jwplayer-common-3.19.1.aar" />
+    <lib-file src="src/android/sdk/jwplayer-chromecast-3.19.1.aar" target="libs/jwplayer-chromecast-3.19.1.aar" />
+    <lib-file src="src/android/sdk/jwplayer-ima-3.19.1.aar" target="libs/jwplayer-ima-3.19.1.aar" />
+    <lib-file src="src/android/sdk/jwplayer-freewheel-3.19.1.aar" target="libs/jwplayer-freewheel-3.19.1.aar" />
+
+</platform>
+
+</plugin>
